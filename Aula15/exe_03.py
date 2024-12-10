@@ -55,8 +55,7 @@ try:
     
     print(f'Tempo de execução: {fim - inicio}')
 
-
-
+    
  
 except ImportError as e:
     print('Erro ao obter dados', e)

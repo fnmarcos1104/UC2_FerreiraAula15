@@ -25,11 +25,11 @@ try:
         else:
             df_bolsa_familia = df
 
+        df_bolsa_familia['VALOR PARCELA'].str.replace(',', '.')
+
         print(df.head())
 
-    df_bolsa_familia = df_bolsa_familia.with_columns(
-        pl.col('VALOR PARCELA')
-    )
+
 
     df_bolsa_familia.write_parquet(ENDERECO_DADOS + 'bolsa_familia.parquet')
 

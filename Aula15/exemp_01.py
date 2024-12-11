@@ -13,6 +13,14 @@ try:
     # Exibindo os dados
     df_dados_lazy = df_dados.lazy()
 
+    # df_dados_lazy = (
+    #     df_dados_lazy
+    #     .filter(pl.col('preco') > 1500)
+    #     .select(['produto', 'preco', 'quantidade'])
+    #     .group_by('produto')
+    #     .agg((pl.col('quantidade') * pl.col('preco')).sum().alias('total'))
+    # )
+
     df_dados_lazy = (
         df_dados_lazy
         .filter(pl.col('preco') > 1500)
